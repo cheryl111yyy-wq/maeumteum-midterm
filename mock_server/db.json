@@ -1,0 +1,178 @@
+{
+  "bootstrap": {
+    "meta": {
+      "sampleData": true,
+      "updatedAt": "2026-10-28"
+    },
+    "prompts": [
+      {
+        "id": 1,
+        "title": "오늘의 마음은 어떤가요?",
+        "subtitle": "부담 없이 지금의 감정을 골라 보세요."
+      },
+      {
+        "id": 2,
+        "title": "오늘도 수고했어요.",
+        "subtitle": "짧게 남겨도 충분한 기록이 돼요."
+      },
+      {
+        "id": 3,
+        "title": "잠깐, 나를 돌아볼 시간",
+        "subtitle": "감정과 생활 태그를 함께 남겨 보세요."
+      }
+    ],
+    "moods": [
+      {
+        "id": 1,
+        "label": "기쁨",
+        "emoji": "😊",
+        "colorHex": "#E8B4B8"
+      },
+      {
+        "id": 2,
+        "label": "평온",
+        "emoji": "😌",
+        "colorHex": "#A8B8A0"
+      },
+      {
+        "id": 3,
+        "label": "보통",
+        "emoji": "😐",
+        "colorHex": "#D7C9A3"
+      },
+      {
+        "id": 4,
+        "label": "가라앉음",
+        "emoji": "😔",
+        "colorHex": "#A79BC8"
+      },
+      {
+        "id": 5,
+        "label": "불안·긴장",
+        "emoji": "😣",
+        "colorHex": "#E7B99D"
+      }
+    ],
+    "situations": [
+      {
+        "id": 1,
+        "label": "수업",
+        "icon": "class"
+      },
+      {
+        "id": 2,
+        "label": "과제",
+        "icon": "assignment"
+      },
+      {
+        "id": 3,
+        "label": "시험",
+        "icon": "exam"
+      },
+      {
+        "id": 4,
+        "label": "아르바이트",
+        "icon": "part_time"
+      },
+      {
+        "id": 5,
+        "label": "친구",
+        "icon": "friends"
+      },
+      {
+        "id": 6,
+        "label": "휴식",
+        "icon": "rest"
+      },
+      {
+        "id": 7,
+        "label": "수면",
+        "icon": "sleep"
+      },
+      {
+        "id": 8,
+        "label": "기타",
+        "icon": "other"
+      }
+    ],
+    "weeklyReport": {
+      "rangeStart": "2026-10-22",
+      "rangeEnd": "2026-10-28",
+      "recordedDays": 5,
+      "topMoodLabel": "평온",
+      "topMoodEmoji": "😌",
+      "topTags": [
+        { "label": "과제", "count": 3 },
+        { "label": "수업", "count": 2 },
+        { "label": "휴식", "count": 2 }
+      ],
+      "moodFlow": [
+        { "weekday": "목", "emoji": "😌" },
+        { "weekday": "금", "emoji": "😣" },
+        { "weekday": "토", "emoji": "😊" },
+        { "weekday": "월", "emoji": "😐" },
+        { "weekday": "화", "emoji": "😌" }
+      ],
+      "summary": "이번 주에는 5일 동안 마음을 기록했고, 과제 태그를 가장 자주 선택했어요.",
+      "includesSample": true
+    },
+    "sampleRecords": [
+      {
+        "id": "sample-2026-10-22",
+        "date": "2026-10-22",
+        "moodId": 2,
+        "moodLabel": "평온",
+        "moodEmoji": "😌",
+        "situations": ["수업", "휴식"],
+        "note": "수업을 마치고 잠깐 쉬었다.",
+        "isSample": true
+      },
+      {
+        "id": "sample-2026-10-23",
+        "date": "2026-10-23",
+        "moodId": 5,
+        "moodLabel": "불안·긴장",
+        "moodEmoji": "😣",
+        "situations": ["과제", "시험"],
+        "note": "발표 준비가 마음에 걸렸다.",
+        "isSample": true
+      },
+      {
+        "id": "sample-2026-10-24",
+        "date": "2026-10-24",
+        "moodId": 1,
+        "moodLabel": "기쁨",
+        "moodEmoji": "😊",
+        "situations": ["친구", "휴식"],
+        "note": "오랜만에 친구를 만났다.",
+        "isSample": true
+      },
+      {
+        "id": "sample-2026-10-26",
+        "date": "2026-10-26",
+        "moodId": 3,
+        "moodLabel": "보통",
+        "moodEmoji": "😐",
+        "situations": ["수업", "과제"],
+        "note": "특별한 일 없이 지나간 하루.",
+        "isSample": true
+      },
+      {
+        "id": "sample-2026-10-27",
+        "date": "2026-10-27",
+        "moodId": 2,
+        "moodLabel": "평온",
+        "moodEmoji": "😌",
+        "situations": ["과제", "수면"],
+        "note": "정리하고 일찍 잠들었다.",
+        "isSample": true
+      }
+    ]
+  },
+  "emptyState": {
+    "prompts": [],
+    "moods": [],
+    "situations": [],
+    "sampleRecords": []
+  }
+}
