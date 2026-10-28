@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../models/mood_entry.dart';
 import '../models/weekly_report.dart';
 import '../theme/app_theme.dart';
+import '../utils/date_utils.dart';
 import '../widgets/common_widgets.dart';
 
 class ReportScreen extends StatelessWidget {
-  const ReportScreen({super.key, required this.report});
+  const ReportScreen({
+    super.key,
+    required this.report,
+    this.records = const [],
+  });
 
   final WeeklyReport? report;
+  final List<MoodEntry> records;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +30,15 @@ class ReportScreen extends StatelessWidget {
           ),
         ),
       );
+    }
+
+    final today = apiDate(DateTime.now());
+    MoodEntry? todayEntry;
+    for (final entry in records.reversed) {
+      if (entry.date == today) {
+        todayEntry = entry;
+        break;
+      }
     }
 
     // P08: 미적이고 최소한의 디자인 - 주간 요약은 서버의 모의 결과만 간결하게 표시한다.
@@ -147,6 +163,12 @@ class ReportScreen extends StatelessWidget {
                   ?.copyWith(color: AppColors.muted),
             ),
             const SizedBox(height: 22),
+            if (todayEntry != null) ...[
+              const SectionHeader(title: '오늘 남긴 기록'),
+              const SizedBox(height: 10),
+              MoodRecordCard(entry: todayEntry),
+              const SizedBox(height: 20),
+            ],
             LayoutBuilder(
               builder: (context, constraints) {
                 if (constraints.maxWidth >= 720) {

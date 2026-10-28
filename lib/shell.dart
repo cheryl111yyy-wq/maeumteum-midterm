@@ -147,7 +147,7 @@ class _MaeumteumShellState extends State<MaeumteumShell> {
               children: [
                 TodayScreen(data: data, onStartRecord: _openRecord),
                 HistoryScreen(records: records),
-                ReportScreen(report: data.weeklyReport),
+                ReportScreen(report: data.weeklyReport, records: records),
               ],
             )
           : AppStateView(
