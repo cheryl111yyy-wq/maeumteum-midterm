@@ -1,13 +1,13 @@
-# 截图需求清单
+# 스크린샷 준비 목록
 
-## 当前状态
+## 현재 상태
 
-Flutter UI 的真实截图已经生成，并已用于 PPT：
+Flutter UI의 실제 실행 화면을 캡처해 PPT에 반영했습니다.
 
 - `screenshots/today.png`
 - `screenshots/record.png`
 - `screenshots/record_after.png`
-- `screenshots/record_before.png`：第 8 页发表比较用 Before 证据图，不是最终 App 的运行页面。
+- `screenshots/record_before.png`: PPT 8페이지 비교용 폐기안이며 최종 앱의 실행 화면이 아닙니다.
 - `screenshots/history.png`
 - `screenshots/report.png`
 - `screenshots/loading.png`
@@ -15,28 +15,30 @@ Flutter UI 的真实截图已经生成，并已用于 PPT：
 - `screenshots/empty.png`
 - `screenshots/wide.png`
 
-这些图片通过运行 Flutter Web 后截取，不是 PowerPoint 手绘界面，也不是组件测试 golden。提交项目时不需要你再补做 Flutter 页面截图。
+이 이미지는 Flutter Web을 실행해 캡처한 것이며 PowerPoint에서 다시 그린 화면이나 테스트용 golden 이미지가 아닙니다. 제출 전에 Flutter 화면을 다시 캡처할 필요는 없습니다.
 
-## 可选补充的竞品证据
+## 선택적으로 추가할 경쟁 앱 자료
 
-只有当老师额外要求原始商店截图作为附件时，才需要补以下图片：
+강사가 원본 스토어 화면을 추가로 요구할 때만 아래 캡처를 준비합니다.
 
-1. DailyBean 官方 Google Play 详情页整屏截图。
-2. Google Play 评分、评价数量与 1–5 星分布截图。
-3. DailyBean 官方 App Store 详情页及评分区域截图。
-4. R1 的原始评论截图：`★3 · 2024-06-04`，内容为“앱이 자주 열리지 않고, 기록할 정보가 너무 많다”는 취지.
-5. R2、R3 的 Google Play 评论原文位置截图，保留日期与星级并隐藏用户名。
-6. DailyBean 主要界面截图 2–3 张，用于附加对照；不能替代本项目的 Flutter 截图。
+1. DailyBean 공식 Google Play 상세 화면 전체
+2. Google Play 평점, 리뷰 수와 1–5점 분포
+3. DailyBean 공식 App Store 상세 화면과 평점 영역
+4. R1 원본 리뷰 캡처: `★3 · 2024-06-04`, 앱이 자주 열리지 않고 기록할 정보가 너무 많다는 내용
+5. R2와 R3의 Google Play 리뷰 위치, 날짜와 별점을 유지하고 사용자 이름은 가림
+6. DailyBean 대표 화면 2–3장, 프로젝트 Flutter 캡처를 대신하지 않는 참고 자료
 
-PPT 中已经使用可核验的 Google Play 评分数据和三条评论短引文。R1 来源标注为“사용자 제공 리뷰 캡처”，正式提交时最好将对应截图放入 `docs/evidence/`；商店截图仍属于补充证据。
+PPT에는 확인 가능한 Google Play 평점 자료와 리뷰 3개의 짧은 인용을 반영했습니다. R1은 `사용자 제공 리뷰 캡처`로 표시했습니다. 원본 캡처를 추가로 제출할 경우 `docs/evidence/`에 넣습니다.
 
-## 项目内已包含的补充截图
+## 프로젝트에 이미 포함된 자료
 
-- Loading、Error、Empty 状态已包含。
-- 手机界面与 Web 宽屏的自适应对比已包含。
-- 如需提交 GitHub，可另行截取仓库首页和 README 渲染结果。
+- Loading, Error, Empty 상태
+- 모바일 화면과 넓은 Web 화면의 반응형 비교
+- 실제 Flutter Before/After 비교
 
-## 命名的建议
+GitHub 제출용으로 저장소 첫 화면과 README 렌더링 결과를 추가로 캡처할 수 있습니다.
+
+## 파일 이름 예시
 
 ```text
 01_dailybean_google_play.png
@@ -54,4 +56,3 @@ PPT 中已经使用可核验的 Google Play 评分数据和三条评论短引文
 13_dailybean_ui_calendar.png
 14_dailybean_ui_report.png
 ```
-
