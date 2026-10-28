@@ -19,19 +19,6 @@ class ReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = report;
-    if (data == null) {
-      return const ResponsivePage(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(22),
-          child: EmptySection(
-            icon: Icons.insights_outlined,
-            title: '아직 돌아볼 기록이 없어요',
-            description: '기록이 쌓이면 최근 7일의 마음과 생활을 요약해 드려요.',
-          ),
-        ),
-      );
-    }
-
     final today = apiDate(DateTime.now());
     MoodEntry? todayEntry;
     for (final entry in records.reversed) {
@@ -39,6 +26,50 @@ class ReportScreen extends StatelessWidget {
         todayEntry = entry;
         break;
       }
+    }
+
+    if (data == null) {
+      if (todayEntry == null) {
+        return const ResponsivePage(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(22),
+            child: EmptySection(
+              icon: Icons.insights_outlined,
+              title: '아직 돌아볼 기록이 없어요',
+              description: '기록이 쌓이면 최근 7일의 마음과 생활을 요약해 드려요.',
+            ),
+          ),
+        );
+      }
+
+      return ResponsivePage(
+        maxWidth: 900,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(22, 16, 22, 32),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('주간 리포트', style: Theme.of(context).textTheme.headlineSmall),
+              const SizedBox(height: 5),
+              Text(
+                '오늘 남긴 기록을 먼저 확인할 수 있어요.',
+                style: Theme.of(context).textTheme.bodyMedium
+                    ?.copyWith(color: AppColors.muted),
+              ),
+              const SizedBox(height: 22),
+              const SectionHeader(title: '오늘 남긴 기록'),
+              const SizedBox(height: 10),
+              MoodRecordCard(entry: todayEntry),
+              const SizedBox(height: 20),
+              Text(
+                '최근 7일 요약 데이터는 아직 불러오지 못했어요.',
+                style: Theme.of(context).textTheme.bodySmall
+                    ?.copyWith(color: AppColors.muted),
+              ),
+            ],
+          ),
+        ),
+      );
     }
 
     // P08: 미적이고 최소한의 디자인 - 주간 요약은 서버의 모의 결과만 간결하게 표시한다.

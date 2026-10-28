@@ -86,4 +86,36 @@ void main() {
     expect(find.text('오늘 남긴 기록'), findsOneWidget);
     expect(find.text('발표 준비를 마쳤다.'), findsOneWidget);
   });
+
+  testWidgets('weekly report keeps today record when summary data is missing', (
+    tester,
+  ) async {
+    final today = apiDate(DateTime.now());
+
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: buildAppTheme(),
+        home: ReportScreen(
+          report: null,
+          records: [
+            MoodEntry(
+              id: 'local-today',
+              date: today,
+              moodId: 1,
+              moodLabel: '평온',
+              moodEmoji: '😌',
+              situations: const ['시험'],
+              note: '오늘 기록을 확인했다.',
+              isSample: false,
+            ),
+          ],
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('오늘 남긴 기록'), findsOneWidget);
+    expect(find.text('오늘 기록을 확인했다.'), findsOneWidget);
+    expect(find.text('최근 7일 요약 데이터는 아직 불러오지 못했어요.'), findsOneWidget);
+  });
 }
